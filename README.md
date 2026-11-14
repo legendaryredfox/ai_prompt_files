@@ -9,6 +9,7 @@ Coleção de arquivos de instruções (prompts) para agentes de IA de programaç
 | Pasta | Descrição |
 |---|---|
 | `oscr_minimal/` | `CLAUDE.md` do dumper mínimo de cartuchos SNES / NES / Famicom / Mega Drive / GBA, derivado do Open Source Cartridge Reader (OSCR) |
+| `md_rewriter/` | `CLAUDE.md` para conduzir a montagem, o firmware 1.1 e os testes do MD Rewriter (dumper de cartuchos Mega Drive), `HISTORY.md` com o histórico do desenvolvimento, e traduções em `translations/` (en, ru, zh-Hans, hi, ur) |
 
 ### Uso
 
@@ -33,6 +34,7 @@ Collection of instruction files (prompts) for AI coding agents such as Claude Co
 | Folder | Description |
 |---|---|
 | `oscr_minimal/` | `CLAUDE.md` for the minimal SNES / NES / Famicom / Mega Drive / GBA cartridge dumper, derived from the Open Source Cartridge Reader (OSCR) |
+| `md_rewriter/` | `CLAUDE.md` to lead the assembly, firmware 1.1 and tests of the MD Rewriter (Mega Drive cartridge dumper), `HISTORY.md` with the development history, and translations in `translations/` (en, ru, zh-Hans, hi, ur) |
 
 ### Usage
 
