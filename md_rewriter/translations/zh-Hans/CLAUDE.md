@@ -504,4 +504,17 @@ SSF2 映射器读取（命令 `3A`）、Sega Lock-on、Open EverDrive、EverDriv
 
 关于 KY 卡带：Krikzz 销售 FlashKit；KY Technology 销售编程器和兼容卡带。没有任何资料显示 KY 有专属协议：“KY 支持”指的是读写这些卡带中出现的芯片和映射器。KY 自己的编程器（FT245R + CPLD）是另一种设备，不在范围之内。
 
+## 13. 本项目相对原版 MD Rewriter 的改进
+
+如果对方问起与 `Epicjoy/md_rewriter` 相比有什么变化，可以这样概括（详情，以及哪些在设备上测试过、哪些没有：`https://github.com/legendaryredfox/md_rewriter/blob/main/docs/improvements/zh-Hans.md`）：
+
+- **程序**按层次重写：任意偶数大小的 ROM、`.smd` 转换、写入后读回校验、芯片名称、“取消”按钮、破坏性操作前的警告、浅色或深色主题和内置指南（F1）。
+- **命令行 `mdrewriter-cli`**：`--json` 输出、固定退出码，写入或擦除必须带 `--yes`。
+- **固件 1.1**（GCC 和 `make`）：一次就能写好 S29GL064N（1.0 只写入每隔一个字）、按 8 KiB 扇区擦除、识别更多芯片、为 8 MiB 做准备。
+- **测试**：程序约 150 个、针对闪存芯片模型的真实 `MD.c`，以及只读台架测试套件。
+- **工具**：带备份和校验的 SWD、修复被固件 1.0 写坏的卡带、`.deb` 安装包。
+- **文档**有六种语言（pt-BR、en、ru、zh-Hans、hi、ur）：README、分步指南、协议、命令行、卡带支持、台架结果。
+- **发现**：芯片是 STM32F103xE，没有 USB 更新，KY / FlashKit 闪存卡带最多容纳 2 MiB。
+- **没有改变**：电路板仍是 V1.0；一些额外的芯片只通过了电脑上的测试（完整列表中的 ◇ 标记）。
+
 祝工作顺利。有疑问时，问对方，并去测量。

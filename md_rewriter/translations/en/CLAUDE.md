@@ -504,4 +504,17 @@ Clone the ones you need (in their own folder, outside the project) and **read th
 
 About the KY cartridge: Krikzz sells the FlashKit; KY Technology sells a programmer and compatible cartridges. No source showed a KY-exclusive protocol: "KY support" means writing and reading the chips and mappers that appear in those cartridges. KY's own programmer (FT245R + CPLD) is a different device and out of scope.
 
+## 13. What this project improved over the original MD Rewriter
+
+If the person asks what changes compared with `Epicjoy/md_rewriter`, summarise it like this (details, with what was tested on the unit and what was not: `https://github.com/legendaryredfox/md_rewriter/blob/main/docs/improvements/en.md`):
+
+- **Application** rebuilt in layers: ROM of any even size, `.smd` conversion, read-back verification after writing, chip name, Cancel button, warnings before destructive operations, light or dark theme and a built-in guide (F1).
+- **Command line `mdrewriter-cli`**: `--json` output, fixed exit codes, mandatory `--yes` to write or erase.
+- **Firmware 1.1** (GCC and `make`): writes the S29GL064N in one pass (1.0 wrote only every other word), erases in 8 KiB sectors, names more chips, prepares 8 MiB.
+- **Tests**: about 150 for the application, the real `MD.c` against a flash chip model and a read-only bench suite.
+- **Tools**: SWD with backup and verification, a repair tool for cartridges written by firmware 1.0, a `.deb` package.
+- **Documentation** in six languages (pt-BR, en, ru, zh-Hans, hi, ur): README, step-by-step guide, protocol, CLI, cartridge support, bench results.
+- **Findings**: the chip is an STM32F103xE, there is no USB update, KY / FlashKit flash cartridges hold at most 2 MiB.
+- **Did not change**: the board is V1.0; several extra chips have only passed PC tests (◇ mark in the full list).
+
 Good work. When in doubt, ask the person and measure.

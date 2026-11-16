@@ -504,4 +504,17 @@ Clone os que precisar (em pasta própria, fora do projeto) e **leia o código an
 
 Sobre o cartucho KY: a Krikzz vende o FlashKit; a KY Technology vende um programador e cartuchos compatíveis. Nenhuma fonte mostrou protocolo exclusivo da KY: "suporte a KY" significa gravar e ler os chips e mappers que aparecem nesses cartuchos. O programador da KY em si (FT245R + CPLD) é outro dispositivo e está fora do escopo.
 
+## 13. O que este projeto melhorou em relação ao MD Rewriter original
+
+Se a pessoa perguntar o que muda em relação ao `Epicjoy/md_rewriter`, resuma assim (detalhes, com o que foi testado na unidade e o que não foi: `https://github.com/legendaryredfox/md_rewriter/blob/main/docs/improvements/pt-BR.md`):
+
+- **Aplicativo** reescrito em camadas: ROM de qualquer tamanho par, conversão `.smd`, conferência por leitura de volta depois de gravar, nome do chip, botão Cancelar, avisos antes de operações destrutivas, tema claro ou escuro e guia embutido (F1).
+- **Linha de comando `mdrewriter-cli`**: saída `--json`, códigos de saída fixos, `--yes` obrigatório para gravar ou apagar.
+- **Firmware 1.1** (GCC e `make`): grava o S29GL064N em uma só passada (o 1.0 gravava uma palavra sim, outra não), apaga em setores de 8 KiB, nomeia mais chips, prepara 8 MiB.
+- **Testes**: cerca de 150 no aplicativo, o `MD.c` real contra um modelo de chip flash e uma suíte de bancada somente leitura.
+- **Ferramentas**: SWD com backup e verificação, reparo de cartuchos gravados pelo firmware 1.0, pacote `.deb`.
+- **Documentação** em seis idiomas (pt-BR, en, ru, zh-Hans, hi, ur): README, guia passo a passo, protocolo, CLI, suporte a cartuchos, resultados de bancada.
+- **Descobertas**: o chip é um STM32F103xE, não há atualização por USB, cartuchos flash KY / FlashKit comportam no máximo 2 MiB.
+- **Não mudou**: a placa é a V1.0; vários chips extras só passaram em testes no PC (marca ◇ na lista completa).
+
 Bom trabalho. Em caso de dúvida, pergunte à pessoa e meça.
